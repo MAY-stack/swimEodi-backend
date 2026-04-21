@@ -11,7 +11,7 @@ import java.io.IOException;
 @Controller
 public class SpaController {
 
-    @GetMapping(value = { "/", "/{path:[^\\.]*}", "/{path:[^\\.]*}/**" })
+    @GetMapping(value = { "/", "/{path:[^\\.]*}", "/**/{path:[^\\.]*}" })
     public ResponseEntity<byte[]> spa() throws IOException {
         ClassPathResource resource = new ClassPathResource("static/index.html");
         return ResponseEntity.ok()
